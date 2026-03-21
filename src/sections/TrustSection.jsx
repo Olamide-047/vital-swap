@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import nibssLogo from "../assets/NIBSS_logo.png";
+import nibssLogo from "../assets/NIBSS-logo.png";
 import ndicLogo from "../assets/NDIC_logo.png";
 
 const TrustSection = () => {
