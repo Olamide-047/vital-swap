@@ -11,10 +11,12 @@ export default function ChatAssistant() {
     }
   ]);
   const [input, setInput] = useState("");
-  const messagesEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -55,7 +57,10 @@ export default function ChatAssistant() {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto space-y-4 bg-gray-50/30">
+          <div 
+            ref={chatContainerRef}
+            className="flex-1 overflow-y-auto space-y-4 bg-gray-50/30 p-4"
+          >
             <AnimatePresence initial={false}>
               {messages.map((m) => (
                 <motion.div
@@ -85,7 +90,6 @@ export default function ChatAssistant() {
                 </motion.div>
               ))}
             </AnimatePresence>
-            <div ref={messagesEndRef} />
           </div>
 
           {/* Input Area */}

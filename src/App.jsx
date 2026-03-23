@@ -11,21 +11,25 @@ import SuccessStories from "./sections/SuccessStories";
 import ChatAssistant from "./sections/ChatAssistant";
 import CTASection from "./sections/CTASection";
 import TrustSection from "./sections/TrustSection";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
-    <Layout>
-      <Hero />
-      <Features />
-      <Calculator />
-      <CardsCarousel />
-      <FeeBreakdown />
-      <FAQs />
-      <Referrals />
-      <SuccessStories />
-      <TrustSection />
-      <ChatAssistant />
-      <CTASection />
-    </Layout>
+      <>
+      <ScrollToTop />
+      <Layout>
+        <div id="Hero"><Hero /></div>
+        <div id="Features"><Features /></div>
+        <div id="Calculator"><Calculator /></div>
+        <div id="CardsCarousel"><CardsCarousel /></div>
+        <div id="FeeBreakdown"><FeeBreakdown /></div>
+        <div id="FAQs"><FAQs /></div>
+        <div id="Referrals"><Referrals /></div>
+        <div id="SuccessStories"><SuccessStories /></div>
+        <div id="TrustSection"><TrustSection /></div>
+        <div id="ChatAssistant"><ChatAssistant /></div>
+        <div id="CTASection"><CTASection /></div>
+      </Layout>
+    </>
   );
 }
